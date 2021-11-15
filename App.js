@@ -17,6 +17,9 @@ import {
   View,
 } from 'react-native';
 
+import { Provider } from "react-redux";
+import HomeScreen from './screens/HomeScreen';
+import { store } from './store';
 
 
 
@@ -27,16 +30,10 @@ const App = () => {
 
 
   return (
-    <SafeAreaView >
-      <StatusBar />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-      >
-        <View>
-          <Text>Hello world</Text>
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <Provider store={store}>
+      <HomeScreen />
+    </Provider>
+
   );
 };
 
